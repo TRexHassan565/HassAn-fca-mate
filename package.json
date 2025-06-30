@@ -1,15 +1,25 @@
 {
-  "name": "nodejs",
+  "name": "hassan-fca",
   "version": "1.0.0",
-  "description": "",
+  "description": "A wrapper for josh-fca that automatically handles config file renaming",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "node -e \"const fs=require('fs');const p=require.resolve('josh-fca/josh-fca.json');fs.copyFile(p,'hassan-fca.json',()=>{});\" || echo 'Config file setup completed'"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "@types/node": "^22.13.11"
-  }
+    "josh-fca": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/HassAn-fca.git"
+  },
+  "keywords": [
+    "facebook-chat-api",
+    "wrapper"
+  ],
+  "author": "Hassan",
+  "license": "MIT"
 }
